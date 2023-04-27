@@ -1,0 +1,4 @@
+- source: Clase1.qmd
+  quarto-pub:
+    - id: f5702933-3e28-4c76-9b3e-3b87efa5efce
+      url: 'https://dvilla.quarto.pub/introducción-al-r'

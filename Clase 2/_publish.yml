@@ -1,0 +1,4 @@
+- source: Clase2.qmd
+  quarto-pub:
+    - id: 0d410b4d-834c-4d5c-883b-0e363414de74
+      url: 'https://dvilla.quarto.pub/tipo-de-objetos'
