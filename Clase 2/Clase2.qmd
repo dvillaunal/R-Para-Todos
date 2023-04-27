@@ -1,0 +1,353 @@
+---
+title: "Tipo de objetos"
+author: "Daniel Villa"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: false
+    code-line-numbers: true
+    toc-title: "Contenido"
+    toc-location: right
+    df-print: paged
+execute: 
+  cache: true
+---
+
+La utilización de diferentes tipos de objetos es fundamental en R para almacenar y procesar información con fines estadísticos y gráficos. Entre los objetos más utilizados en R se encuentran los vectores, matrices, arreglos, marcos de datos y listas. Es importante destacar que cada uno de estos objetos tiene características específicas y su propia forma de creación.
+
+Es esencial conocer las características de estos objetos en R, ya que nos permiten almacenar información de manera eficiente y realizar cálculos y gráficos con precisión. Por lo tanto, debemos tener cuidado de no caer en falsificaciones o errores al crear y utilizar estos objetos. En resumen, la comprensión adecuada de estos objetos es fundamental para el uso efectivo de R en análisis de datos.
+
+# Variables
+
+Una variable es un contenedor que se utiliza para almacenar valores, como números, caracteres o factores. Las variables se utilizan para almacenar información en la memoria de la computadora y se pueden acceder y modificar en cualquier momento durante una sesión de trabajo en R.
+
+Las variables en R tienen un nombre y un tipo de dato, que se especifica cuando se crea la variable. El nombre de la variable es utilizado para referirse a la información almacenada en ella, y puede contener letras, números y guiones bajos. El tipo de dato de la variable define el tipo de información que puede ser almacenado en ella, como números enteros, números de punto flotante, caracteres, factores, entre otros.
+
+Las variables son una parte fundamental del trabajo en R, ya que permiten al usuario manipular datos de manera eficiente y realizar análisis estadísticos y gráficos. Las variables también son útiles para automatizar procesos y crear programas en R, ya que pueden ser utilizadas en diferentes funciones y operaciones.
+
+## Ejemplo:
+
+Supongamos que queremos almacenar las edades de tres personas en R. Para hacer esto, podemos crear una variable llamada "edades" y asignarle los valores utilizando el operador de asignación "\<-". El código se vería así:
+
+```{r}
+# Creamos la variable "edades"
+edades <- c(25, 32, 41)
+
+# Imprimimos la variable "edades"
+print(edades)
+```
+
+En este ejemplo, hemos creado una variable llamada "edades" y le hemos asignado los valores 25, 32 y 41 utilizando el operador `c()`, que es utilizado para combinar valores en un vector. Luego, hemos utilizado la función `print()` para imprimir la variable "edades".
+
+Ahora que hemos creado la variable, podemos realizar operaciones y análisis estadísticos sobre ella. Por ejemplo, podemos calcular la media de las edades utilizando la función `mean()`:
+
+```{r}
+# Calculamos la media de las edades
+media_edades <- mean(edades)
+
+# Imprimimos la media
+print(media_edades)
+```
+
+En este caso, hemos creado una nueva variable llamada "media_edades" y hemos asignado el resultado de la función `mean()` (que calcula la media de los valores en un vector) a esta variable. Luego, hemos utilizado la función `print()` para imprimir la media.
+
+# Vectores
+
+Un vector es un objeto que se utiliza para almacenar un conjunto ordenado de valores del mismo tipo de datos, como números, caracteres o lógicos. Los vectores son una herramienta fundamental en el análisis de datos en R, ya que permiten almacenar y manipular conjuntos de datos de manera eficiente y compacta.
+
+Los vectores en R pueden ser creados utilizando la función `c()`, que combina valores en un vector. También se pueden utilizar otras funciones para crear vectores de valores predeterminados, como la función `seq()` para crear secuencias numéricas o la función `rep()` para repetir un valor.
+
+Una de las ventajas de los vectores en R es que se pueden operar y manipular de manera muy similar a los números individuales. Esto significa que podemos realizar operaciones aritméticas y estadísticas sobre los valores en un vector de la misma manera que lo haríamos con números individuales.
+
+## Ejemplo:
+
+Supongamos que queremos almacenar las notas de un grupo de estudiantes en un examen de matemáticas. Para hacer esto, podemos crear un vector llamado "notas" y asignarle los valores utilizando el operador de asignación "\<-". El código se vería así:
+
+```{r}
+# Creamos la variable "notas"
+notas <- c(7.5, 8.2, 6.9, 9.0, 5.8, 7.2)
+
+# Imprimimos la variable "notas"
+print(notas)
+```
+
+En este ejemplo, hemos creado una variable llamada "notas" y le hemos asignado los valores de las notas de seis estudiantes utilizando el operador `c()`. Luego, hemos utilizado la función `print()` para imprimir la variable "notas".
+
+Ahora que hemos creado el vector, podemos realizar operaciones y análisis estadísticos sobre él. Por ejemplo, podemos calcular la media, la mediana y la desviación estándar de las notas utilizando las funciones `mean()`, `median()` y `sd()` respectivamente:
+
+```{r}
+# Calculamos la media, mediana y desviación estándar de las notas
+media_notas <- mean(notas)
+mediana_notas <- median(notas)
+sd_notas <- sd(notas)
+
+# Imprimimos los resultados
+print(media_notas)
+print(mediana_notas)
+print(sd_notas)
+```
+
+En este caso, hemos creado tres nuevas variables (media_notas, mediana_notas y sd_notas) y hemos asignado los resultados de las funciones `mean()`, `median()` y `sd()` a estas variables. Luego, hemos utilizado la función `print()` para imprimir los resultados.
+
+# Matrices
+
+Una matriz es un objeto que tiene una o más dimensiones y que contiene elementos del mismo tipo. Las matrices se utilizan para almacenar datos que tienen una estructura tabular, es decir, que se organizan en filas y columnas.
+
+Las matrices en R se pueden crear utilizando la función matrix(). Esta función toma como argumentos los elementos que queremos incluir en la matriz, el número de filas y columnas que tendrá la matriz, y opcionalmente el nombre de las filas y columnas.
+
+Las matrices en R son muy útiles para realizar operaciones matriciales, como multiplicación, inversión y diagonalización, así como para aplicar funciones a los elementos de la matriz.
+
+## Ejemplo:
+
+Supongamos que tenemos los siguientes datos de ventas de tres productos en cuatro tiendas diferentes:
+
+```         
+Tienda    Producto 1    Producto 2    Producto 3
+   1          100           200            50
+   2          150           100           120
+   3           80           300            70
+   4          200           250           100
+```
+
+Podemos crear una matriz para almacenar estos datos de la siguiente manera:
+
+```{r}
+# Creamos una matriz con los datos de ventas
+ventas <- matrix(c(100, 150, 80, 200, 200, 100, 300, 250, 50, 120, 70, 100), nrow = 4, ncol = 3, byrow = TRUE,
+                 dimnames = list(c("Tienda 1", "Tienda 2", "Tienda 3", "Tienda 4"),
+                                 c("Producto 1", "Producto 2", "Producto 3")))
+
+# Imprimimos la matriz
+print(ventas)
+```
+
+En este ejemplo, hemos utilizado la función `matrix()` para crear una matriz llamada "ventas" con los datos de ventas. La opción `nrow` indica el número de filas de la matriz, `ncol` indica el número de columnas, `byrow` indica si los datos se deben llenar por filas o por columnas (en este caso, se llenan por filas) y `dimnames` se utiliza para especificar los nombres de las filas y columnas.
+
+Luego, hemos utilizado la función `print()` para imprimir la matriz "ventas".
+
+Ahora que hemos creado la matriz, podemos realizar operaciones matriciales y estadísticas sobre ella. Por ejemplo, podemos calcular la suma de las ventas de cada producto utilizando la función `rowSums()`:
+
+```{r}
+# Calculamos la suma de las ventas de cada producto
+ventas_por_tienda <- rowSums(ventas)
+
+# Imprimimos el resultado
+print(ventas_por_tienda)
+```
+
+En este caso, hemos creado una nueva variable llamada "ventas_por_tienda" y le hemos asignado el resultado de la función `rowSums()`, que calcula la suma de cada fila de la matriz. Luego, hemos utilizado la función `print()` para imprimir el resultado.
+
+# Arreglos
+
+Un arreglo es un objeto multidimensional que puede tener más de dos dimensiones, a diferencia de las matrices que tienen solo dos dimensiones. Los arreglos son muy útiles cuando se tienen datos que se organizan en tres o más dimensiones.
+
+Los arreglos en R se pueden crear utilizando la función `array()`. Esta función toma como argumentos los elementos que queremos incluir en el arreglo, el número de dimensiones que tendrá el arreglo, y opcionalmente los nombres de las dimensiones.
+
+Los arreglos en R son útiles para almacenar y manipular datos multidimensionales, como imágenes, datos de sensores, y datos climáticos.
+
+## Ejemplo:
+
+Supongamos que tenemos los siguientes datos de ventas de tres productos en cuatro tiendas diferentes durante dos trimestres:
+
+```
+Tienda    Producto 1    Producto 2    Producto 3
+   1          100           200            50
+   2          150           100           120
+   3           80           300            70
+   4          200           250           100
+
+Tienda    Producto 1    Producto 2    Producto 3
+   1          120           180            60
+   2          160           150           130
+   3           70           280            80
+   4          220           230           120
+```
+
+Podemos crear un arreglo para almacenar estos datos de la siguiente manera:
+
+```{r}
+# Creamos un arreglo con los datos de ventas
+ventas <- array(c(100, 150, 80, 200, 200, 100, 300, 250, 50, 120, 70, 100,
+                  120, 160, 70, 220, 180, 150, 280, 230, 60, 130, 80, 120),
+                 dim = c(4, 3, 2),
+                 dimnames = list(c("Tienda 1", "Tienda 2", "Tienda 3", "Tienda 4"),
+                                 c("Producto 1", "Producto 2", "Producto 3"),
+                                 c("Trimestre 1", "Trimestre 2")))
+
+# Imprimimos el arreglo
+print(ventas)
+```
+
+En este ejemplo, hemos utilizado la función `array()` para crear un arreglo llamado "ventas" con los datos de ventas. La opción dim indica el número de dimensiones del arreglo, y dimnames se utiliza para especificar los nombres de las dimensiones.
+
+Luego, hemos utilizado la función `print()` para imprimir el arreglo "ventas".
+
+Ahora que hemos creado el arreglo, podemos realizar operaciones y manipulaciones sobre él. Por ejemplo, podemos calcular la media de las ventas de cada trimestre para cada producto utilizando la función `apply()`:
+
+```{r}
+# Calculamos la media de las ventas de cada trimestre para cada producto
+media_ventas <- apply(ventas, c(2, 3), mean)
+
+# Imprimimos el resultado
+print(media_ventas)
+```
+
+En este caso, hemos creado una nueva variable llamada "media_ventas" y le hemos asignado el resultado de la función `apply()`, que calcula la media de las ventas en cada trimestre para cada producto. La opción c(2,3) indica que queremos aplicar la función a las dimensiones 2 y 3 del arreglo (es decir, a los productos y los trimestres), y la función `mean()` calcula la media según lo indicado en los otros items
+
+# Data Frames
+
+Un marco de datos (data frame) en R es un tipo de objeto que permite almacenar datos en forma de tablas, en la que cada columna puede tener un tipo de datos diferente. Es una estructura muy común en análisis de datos y estadística, y se utiliza para representar conjuntos de datos complejos.
+
+Los marcos de datos son similares a las matrices, pero a diferencia de las matrices, los marcos de datos pueden contener diferentes tipos de datos en cada columna y pueden tener nombres de columna y fila.
+
+## Ejemplo:
+
+```{r}
+# Creamos un marco de datos con tres columnas
+df <- data.frame(nombre=c("Juan", "María", "Pedro"), edad=c(25, 30, 35), casado=c(TRUE, FALSE, TRUE))
+```
+
+En este ejemplo, se ha creado un marco de datos con tres columnas: "nombre", "edad" y "casado". La primera columna es un vector de caracteres, mientras que la segunda es un vector numérico y la tercera es un vector lógico.
+
+Para acceder a las columnas del marco de datos, se puede usar la notación de "$" o de corchetes, por ejemplo:
+
+```{r}
+# Accedemos a la columna "nombre" del marco de datos
+df$nombre
+
+# Accedemos a la columna "edad" del marco de datos
+df[,"edad"]
+```
+
+# Listas
+
+Una lista en R es un objeto que puede contener diferentes tipos de datos, como vectores, matrices, arreglos, marcos de datos e incluso otras listas. Las listas se utilizan para almacenar datos de forma jerárquica y estructurada, y son muy útiles para representar datos complejos.
+
+## Ejemplo:
+
+```{r}
+# Creamos una lista con cuatro elementos: un vector, una matriz, un marco de datos y otra lista
+mi_lista <- list(nombres=c("Juan", "María", "Pedro"),
+                 matriz=matrix(1:6, nrow=2),
+                 df=data.frame(edad=c(25, 30, 35),
+                               casado=c(TRUE, FALSE, TRUE)),
+                 sublista=list("a", "b", "c"))
+```
+
+En este ejemplo, se ha creado una lista llamada "mi_lista" que contiene cuatro elementos diferentes: un vector de caracteres, una matriz de tamaño 2x3, un marco de datos con dos columnas y tres filas y una sublista con tres elementos de tipo caracter.
+
+Para acceder a los elementos de la lista, se puede usar la notación de "$" o de corchetes, por ejemplo:
+
+```{r}
+# Accedemos al vector de nombres de la lista
+mi_lista$nombres
+
+# Accedemos a la segunda fila y tercera columna de la matriz
+mi_lista$matriz[2,3]
+
+# Accedemos a la columna "casado" del marco de datos
+mi_lista$df$casado
+
+# Accedemos al segundo elemento de la sublista
+mi_lista$sublista[[2]]
+```
+
+> Nota: En este ejemplo, el acceso a la sublista se realiza con doble corchete, ya que se trata de una lista dentro de otra lista.
+
+# Ejercicios
+
+::: {.panel-tabset}
+
+## Ejercicio 1
+
+Construya un vector con los primeros 10 números enteros usando la función `seq()`.
+
+> Pista: en la consola del R ejecute el siguiente codigo `?seq()` (Es una forma de buscar ayuda en R de manera oficial cuando no se sabe utilizar una función)
+
+## Solución
+
+```{r}
+mi_vector <- seq(from = 1, to = 10, by = 1)
+```
+:::
+
+::: {.panel-tabset}
+
+## Ejercicio 2
+
+Construya una matriz de 4x4 que contenga los números del 1 al 16, ordenados por filas.
+
+## Solución
+
+```{r}
+mi_matriz <- matrix(1:16, nrow = 4, byrow = TRUE)
+```
+
+:::
+
+::: {.panel-tabset}
+
+## Ejercicio 3
+
+Construya una lista que contenga un vector de 5 números aleatorios entre 1 y 10, una matriz de 3x3 con números aleatorios enteros entre 0 y 100, y un data frame con los siguientes datos: nombre ('Juan', 'María', 'Pedro'), edad (25, 30, 35) y sexo ('M', 'F', 'M').
+
+## Solución
+
+```{r}
+mi_lista <- list(vector_aleatorio = sample(1:10, 5),
+                  matriz_aleatoria = matrix(sample(0:100, 9), nrow = 3),
+                  data_frame = data.frame(nombre = c('Juan', 'María', 'Pedro'),
+                                          edad = c(25, 30, 35),
+                                          sexo = c('M', 'F', 'M')))
+```
+
+:::
+
+::: {.panel-tabset}
+
+## Ejercicio 4
+
+Construya un data frame con los siguientes datos: nombre ('Ana', 'Carlos', 'Lucía'), edad (22, 28, 24), altura (1.70, 1.80, 1.65), y estado civil ('soltera', 'casado', 'soltera').
+
+## Solución
+
+```{r}
+mi_data_frame <- data.frame(nombre = c('Ana', 'Carlos', 'Lucía'),
+                            edad = c(22, 28, 24),
+                            altura = c(1.70, 1.80, 1.65),
+                            estado_civil = c('soltera', 'casado', 'soltera'))
+```
+
+:::
+
+
+::: {.panel-tabset}
+
+## Ejercicio 5
+
+Construya un vector que contenga los números enteros del 1 al 20, pero omitiendo los números múltiplos de 3.
+
+## Solución
+
+```{r}
+mi_vector <- seq(from = 1, to = 20)
+mi_vector <- mi_vector[mi_vector %% 3 != 0]
+```
+
+:::
+
+::: {.panel-tabset}
+
+## Ejercicio 6
+
+Construya una matriz de 5x5 con los números del 1 al 25, pero en la que los elementos de la diagonal principal sean iguales a 0.
+
+## Solución
+
+```{r}
+mi_matriz <- matrix(1:25, nrow = 5)
+diag(mi_matriz) <- 0
+```
+
+:::

@@ -1,0 +1,2 @@
+"0","# Creamos una lista con cuatro elementos: un vector, una matriz, un marco de datos y otra lista"
+"0","mi_lista <- list(nombres=c(""Juan"", ""María"", ""Pedro""), matriz=matrix(1:6, nrow=2), df=data.frame(edad=c(25, 30, 35), casado=c(TRUE, FALSE, TRUE)), sublista=list(""a"", ""b"", ""c""))"

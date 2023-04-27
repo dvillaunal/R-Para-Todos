@@ -1,0 +1,2 @@
+"0","# Creamos un marco de datos con tres columnas"
+"0","df <- data.frame(nombre=c(""Juan"", ""María"", ""Pedro""), edad=c(25, 30, 35), casado=c(TRUE, FALSE, TRUE))"
